@@ -50,7 +50,7 @@ const reducer = (state, action) => {
     case actions.ERROR_POLLING_DATA:
       return { ...state, polling: false, errorPolling: action.payload }
     case actions.POLLED_DATA:
-      return { ...state, data: action.payload, accurateAsAt: new Date() }
+      return { ...state, data: action.payload,polling: false, accurateAsAt: new Date() }
     default:
       return { ...initState }
   }
