@@ -48,7 +48,7 @@ const MainPage = () => {
         {polling && (
           <>
             <span className='sub-header'>Trying to get new data ...</span>
-            &nbsp; <CircularProgress color='secondary' />
+            &nbsp; <CircularProgress size={14} color='secondary' />
           </>
         )}
         {accurateAsAt && !polling && (
