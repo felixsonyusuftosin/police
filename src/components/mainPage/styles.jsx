@@ -64,6 +64,7 @@ export const ColumnsHeader = styled.div`
   display: grid;
   background: rgba(0,0,0,0.03);
   background: rgba(0,0,0,0.05);
+  text-transform: capitalize;
   grid-gap: 5px;
   height: 60px;
   line-height: 60px;

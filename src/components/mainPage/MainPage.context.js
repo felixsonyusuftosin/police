@@ -29,19 +29,21 @@ const formatData = data => {
     rows: []
   }
 
-  data.entries.forEach(entry => {
+  data.feed.entry.forEach(entry => {
     const keys = Object.keys(entry)
     const matchingKeys = keys.filter(key => key.includes('gsx'))
-    const formattedRow = matchingKeys.map(matchingKey => {
+    const formattedRow = {}
+    matchingKeys.forEach(matchingKey => {
       const header = matchingKey.replace('gsx$', '')
-      return {
-        [header]: entry[matchingKey]
-      }
+        formattedRow[header] =  entry[matchingKey]['$t'] || '--'
+      
     })
-    if (!formattedData.columns)
-      formattedData.columns.push(Object.keys(formattedRow))
+    if (!formattedData.columns.length) {
+      formattedData.columns = Object.keys(formattedRow)
+    }
     formattedData.rows.push(formattedRow)
   })
+  return formattedData
 }
 
 const actions = {

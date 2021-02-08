@@ -36,7 +36,7 @@ const MainPage = () => {
 
   useEffect(() => {
     if (data && data.columns) {
-      setHeaders(Object.keys(data.columns))
+      setHeaders(data.columns)
     }
   }, [data])
 
@@ -53,8 +53,8 @@ const MainPage = () => {
         {accurateAsAt && !polling && (
           <span className='sub-header'>
             {' '}
-            Accurate as at
-            {moment(accurateAsAt).format('MMMM Do YYYY, h:mm:ss a')}
+            Showing data from &nbsp;
+            <strong>{moment(accurateAsAt).format('MMMM Do YYYY, h:mm:ss a')}</strong>
           </span>
         )}
         {errorPolling && (
