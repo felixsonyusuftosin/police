@@ -3,7 +3,6 @@ import { MainPageProvider, useMainPageContext } from './MainPage.context'
 import {
   PageContainer,
   PageHeader,
-  Toolbar,
   Table,
   ColumnsHeader,
   Columns,
